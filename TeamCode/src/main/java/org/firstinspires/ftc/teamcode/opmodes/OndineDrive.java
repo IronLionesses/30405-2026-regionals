@@ -1,8 +1,13 @@
 package org.firstinspires.ftc.teamcode.opmodes;
 
+import static org.firstinspires.ftc.teamcode.constants.Hardware.MotorNames.intake;
+
+import android.widget.Checkable;
+
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorController;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 import org.firstinspires.ftc.teamcode.constants.Hardware;
@@ -13,7 +18,7 @@ public class OndineDrive extends OpMode {
     DcMotor fr;
     DcMotor bl;
     DcMotor br;
-
+    DcMotor intake;
 
     public void init() {
 
@@ -21,6 +26,7 @@ public class OndineDrive extends OpMode {
         fl = hardwareMap.get(DcMotor.class, Hardware.MotorNames.frontLeft);
         br = hardwareMap.get(DcMotor.class, Hardware.MotorNames.backRight);
         bl = hardwareMap.get(DcMotor.class, Hardware.MotorNames.backLeft);
+        intake = hardwareMap.get(DcMotor.class, Hardware.MotorNames.intake);
 
         if (Hardware.MotorReversed.frontRight) {
             fr.setDirection(DcMotorSimple.Direction.REVERSE);
@@ -56,6 +62,13 @@ public class OndineDrive extends OpMode {
         fl.setPower(flp);
         bl.setPower(blp);
         br.setPower(brp);
+        if (gamepad1.aWasPressed()) {
+            intake.setPower(1);
+        }
+
+        if (gamepad1.aWasReleased()) {
+            intake.setPower(0);
+        }
 
     }
 }

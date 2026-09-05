@@ -3,12 +3,15 @@ package org.firstinspires.ftc.teamcode.constants;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 public class Hardware {
+    public static Object Button; // may not be accurate, experimental (see OndineDrive)
+
     public static class MotorNames {
         public static String frontRight = "rf"; // 0
         public static String backRight = "rr"; // 1
         public static String frontLeft = "lf"; // 2
         public static String backLeft = "lr"; // 3
         public static String intake = "intakeMotor"; // 0
+        public static String powerButton;// May not be right - simply a test (see OndineDrive)
     }
 
     public static class MotorReversed {
