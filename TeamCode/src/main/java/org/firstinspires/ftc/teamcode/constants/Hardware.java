@@ -16,6 +16,7 @@ public class Hardware {
         public static boolean backRight = true;
         public static boolean frontLeft = false;
         public static boolean backLeft = false;
+        public static boolean intake = false;
     }
 
     public static class ZeroPowerMode {
