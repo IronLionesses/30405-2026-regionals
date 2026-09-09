@@ -54,10 +54,10 @@ public class OndineDrive extends OpMode {
         double x= gamepad1.left_stick_x;
         double y= gamepad1.left_stick_y;
         double r= gamepad1.right_stick_x;
-        double frp= -x+y-r;
-        double flp= x+y+r;
-        double brp= x+y+r;
-        double blp= -x+y-r;
+        double frp= x+y+r;
+        double flp= -x+y-r;
+        double brp= -x+y-r;
+        double blp= x+y+r;
         rf.setPower(frp);
         rr.setPower(flp);
         lf.setPower(blp);
