@@ -14,40 +14,40 @@ import org.firstinspires.ftc.teamcode.constants.Hardware;
 
 @TeleOp
 public class OndineDrive extends OpMode {
-    DcMotor fl;
-    DcMotor fr;
-    DcMotor bl;
-    DcMotor br;
+    DcMotor rf;
+    DcMotor rr;
+    DcMotor lf;
+    DcMotor lr;
     DcMotor intake;
 
     public void init() {
 
-        fr = hardwareMap.get(DcMotor.class, Hardware.MotorNames.frontRight);
-        fl = hardwareMap.get(DcMotor.class, Hardware.MotorNames.frontLeft);
-        br = hardwareMap.get(DcMotor.class, Hardware.MotorNames.backRight);
-        bl = hardwareMap.get(DcMotor.class, Hardware.MotorNames.backLeft);
+        rf= hardwareMap.get(DcMotor.class, Hardware.MotorNames.frontRight);
+        rr = hardwareMap.get(DcMotor.class, Hardware.MotorNames.frontLeft);
+        lf = hardwareMap.get(DcMotor.class, Hardware.MotorNames.backRight);
+        lr = hardwareMap.get(DcMotor.class, Hardware.MotorNames.backLeft);
         intake = hardwareMap.get(DcMotor.class, Hardware.MotorNames.intake);
 
         if (Hardware.MotorReversed.frontRight) {
-            fr.setDirection(DcMotorSimple.Direction.REVERSE);
+            rf.setDirection(DcMotorSimple.Direction.REVERSE);
         }
 
         if (Hardware.MotorReversed.frontLeft) {
-            fl.setDirection(DcMotorSimple.Direction.REVERSE);
+            rr.setDirection(DcMotorSimple.Direction.REVERSE);
         }
 
         if (Hardware.MotorReversed.backRight) {
-            br.setDirection(DcMotorSimple.Direction.REVERSE);
+            lf.setDirection(DcMotorSimple.Direction.REVERSE);
         }
 
         if (Hardware.MotorReversed.backLeft) {
-            bl.setDirection(DcMotorSimple.Direction.REVERSE);
+            lr.setDirection(DcMotorSimple.Direction.REVERSE);
         }
 
-        fl.setZeroPowerBehavior(Hardware.ZeroPowerMode.driveMotors);
-        fr.setZeroPowerBehavior(Hardware.ZeroPowerMode.driveMotors);
-        bl.setZeroPowerBehavior(Hardware.ZeroPowerMode.driveMotors);
-        br.setZeroPowerBehavior(Hardware.ZeroPowerMode.driveMotors);
+        rf.setZeroPowerBehavior(Hardware.ZeroPowerMode.driveMotors);
+        rr.setZeroPowerBehavior(Hardware.ZeroPowerMode.driveMotors);
+        lf.setZeroPowerBehavior(Hardware.ZeroPowerMode.driveMotors);
+        lr.setZeroPowerBehavior(Hardware.ZeroPowerMode.driveMotors);
     }
 
     public void loop() {
@@ -58,10 +58,10 @@ public class OndineDrive extends OpMode {
         double flp= x+y+r;
         double brp= x+y+r;
         double blp= -x+y-r;
-        fr.setPower(frp);
-        fl.setPower(flp);
-        bl.setPower(blp);
-        br.setPower(brp);
+        rf.setPower(frp);
+        rr.setPower(flp);
+        lf.setPower(blp);
+        lr.setPower(brp);
         if (gamepad1.aWasPressed()) {
             intake.setPower(1);
         }
