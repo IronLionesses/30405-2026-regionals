@@ -54,14 +54,34 @@ public class OndineDrive extends OpMode {
         double x= gamepad1.left_stick_x;
         double y= gamepad1.left_stick_y;
         double r= gamepad1.right_stick_x;
-        double frp= x+y+r;
-        double flp= -x+y-r;
-        double brp= -x+y-r;
-        double blp= x+y+r;
+        double frp= -x+y-r;
+        double flp= x+y+r;
+        double brp= x+y+r;
+        double blp= -x+y-r;
         rf.setPower(frp);
         rr.setPower(flp);
         lf.setPower(blp);
         lr.setPower(brp);
+
+       // y'all idk how to turn on a motor, don't question the code :)
+
+        if (gamepad1.yWasPressed()) {
+            rf.setPower(1);
+        }
+
+        if (gamepad1.yWasPressed()) {
+            rr.setPower(1);
+        }
+
+        if (gamepad1.yWasPressed()) {
+            lf.setPower(1);
+        }
+
+
+        if (gamepad1.yWasPressed()) {
+            lr.setPower(1);
+        }
+
         if (gamepad1.aWasPressed()) {
             intake.setPower(1);
         }
