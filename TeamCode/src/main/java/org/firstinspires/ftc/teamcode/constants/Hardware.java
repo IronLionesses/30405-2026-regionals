@@ -11,7 +11,7 @@ public class Hardware {
         public static String frontLeft = "lf"; // 2
         public static String backLeft = "lr"; // 3
         public static String intake = "intakeMotor"; // 0
-        public static String powerButton;// May not be right - simply a test (see OndineDrive)
+        public static String outtake = "outtakeMotor"; // 0 (?) idk follow up
     }
 
     public static class MotorReversed {
@@ -20,6 +20,7 @@ public class Hardware {
         public static boolean frontLeft = false;
         public static boolean backLeft = false;
         public static boolean intake = false;
+        public static boolean outtake = false;
     }
 
     public static class ZeroPowerMode {

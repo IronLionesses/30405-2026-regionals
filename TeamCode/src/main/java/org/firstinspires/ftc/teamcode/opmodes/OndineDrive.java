@@ -19,6 +19,7 @@ public class OndineDrive extends OpMode {
     DcMotor lf;
     DcMotor lr;
     DcMotor intake;
+    DcMotor outtake;
 
     public void init() {
 
@@ -63,7 +64,7 @@ public class OndineDrive extends OpMode {
         lf.setPower(blp);
         lr.setPower(brp);
 
-       // y'all idk how to turn on a motor, don't question the code :)
+       // y'all idk how to turn on a motor, don't question the code :) ~ Ondine
 
         if (gamepad1.yWasPressed()) {
             rf.setPower(1);
@@ -84,6 +85,14 @@ public class OndineDrive extends OpMode {
 
         if (gamepad1.aWasPressed()) {
             intake.setPower(1);
+        }
+
+        if (gamepad1.leftBumperWasPressed()) {
+            outtake.setPower(1);
+        }
+
+        if (gamepad1.leftBumperWasReleased()) {
+            outtake.setPower(0);
         }
 
         if (gamepad1.aWasReleased()) {
